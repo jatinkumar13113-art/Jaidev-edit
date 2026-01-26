@@ -1,84 +1,56 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  background: #0f172a;
+  color: #e5e7eb;
+  text-align: center;
 }
 
 header {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 25px;
+  padding: 30px 10px;
+  background: #020617;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+header p {
+  color: #94a3b8;
 }
 
 nav {
-  background: #111;
-  text-align: center;
+  background: #020617;
+  padding: 10px;
 }
 
 nav a {
-  color: white;
-  padding: 12px 15px;
-  display: inline-block;
+  color: #38bdf8;
+  margin: 0 10px;
   text-decoration: none;
-}
-
-nav a:hover {
-  background: #333;
-}
-
-.container {
-  display: flex;
-  padding: 15px;
+  font-weight: bold;
 }
 
 main {
-  flex: 3;
-}
-
-aside {
-  flex: 1;
-  background: #fff;
-  padding: 15px;
-  margin-left: 15px;
-}
-
-.post {
-  background: white;
-  padding: 15px;
-  margin-bottom: 15px;
-}
-
-.post img {
-  width: 100%;
-}
-
-.meta {
-  font-size: 14px;
-  color: gray;
+  padding: 40px 15px;
 }
 
 .btn {
   display: inline-block;
-  background: black;
-  color: white;
-  padding: 8px 12px;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #38bdf8;
+  color: #020617;
   text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 footer {
-  background: #000;
-  color: #fff;
-  text-align: center;
-  padding: 10px;
-}
-
-@media(max-width:768px){
-  .container {
-    flex-direction: column;
-  }
-  aside {
-    margin-left: 0;
-    margin-top: 15px;
-  }
+  margin-top: 40px;
+  padding: 15px;
+  background: #020617;
+  color: #64748b;
+  font-size: 14px;
 }
