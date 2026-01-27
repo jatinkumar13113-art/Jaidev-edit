@@ -1,40 +1,85 @@
-body{
-  margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:#020617;
-  color:#e5e7eb;
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #050b1e, #0a1638);
+  color: #ffffff;
+  text-align: center;
 }
 
-a{color:#38bdf8;text-decoration:none}
-
-header{
-  padding:30px 15px;
-  text-align:center;
-  background:#020617;
+/* HEADER */
+header {
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #020617, #081a3a);
 }
 
-header h1{margin:0;font-size:32px}
-header p{color:#94a3b8}
-
-nav{margin-top:15px}
-nav a{margin:0 10px;font-weight:bold}
-
-.container{
-  max-width:900px;
-  margin:auto;
-  padding:25px 15px;
+header h1 {
+  margin: 0;
+  font-size: 34px;
 }
 
-/* POST CARD */
-.post{
-  background:rgba(255,255,255,0.06);
-  border-radius:14px;
-  padding:22px;
-  margin-bottom:30px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+header p {
+  margin-top: 10px;
+  color: #9ecbff;
+  font-size: 16px;
 }
 
-.post h2{color:#38bdf8;margin-top:0}
+/* NAVBAR */
+nav {
+  margin-top: 20px;
+}
+
+nav a {
+  color: #38bdf8;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* CONTENT */
+.container {
+  padding: 60px 20px;
+}
+
+.container h2 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.container p {
+  font-size: 16px;
+  color: #dbeafe;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* BUTTON */
+.btn {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 14px 28px;
+  background: #38bdf8;
+  color: #020617;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #0ea5e9;
+}
+
+/* FOOTER */
+footer {
+  margin-top: 60px;
+  padding: 20px;
+  background: #020617;
+  font-size: 14px;
+  color: #94a3b8;
+}.post h2{color:#38bdf8;margin-top:0}
 
 /* PROMPT + COPY */
 .prompt-box{
