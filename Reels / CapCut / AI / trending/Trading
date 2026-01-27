@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Trending AI Prompts | Jaidev Edit</title>
+<meta name="description" content="Trending AI photo & video editing prompts. Viral reels, Instagram trends, CapCut trends.">
+
+<link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+<header>
+  <h1>🔥 Trending</h1>
+  <p>Viral & trending AI prompts and reels</p>
+
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../instagram/">Instagram</a>
+    <a href="../reels/">Reels</a>
+    <a href="../capcut/">CapCut</a>
+    <a href="../ai-prompts/">AI Prompts</a>
+  </nav>
+</header>
+
+<div class="container">
+
+  <div class="post">
+    <h2>🔥 Viral Trending Reel Prompt</h2>
+
+    <div class="prompt-box">
+      <button class="copy-btn" onclick="copyPrompt('t1',this)">Copy</button>
+      <div class="prompt-text" id="t1">
+Ultra-viral cinematic reel,
+dramatic lighting,
+fast cuts,
+Instagram trending style,
+4K ultra realistic
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>© 2026 Jaidev Edit</footer>
+
+<script>
+function copyPrompt(id,btn){
+  const t=document.getElementById(id).innerText;
+  navigator.clipboard.writeText(t).then(()=>{
+    btn.innerText="Copied!";
+    btn.classList.add("copied");
+    setTimeout(()=>{
+      btn.innerText="Copy";
+      btn.classList.remove("copied");
+    },1500);
+  });
+}
+</script>
+
+</body>
+</html>
