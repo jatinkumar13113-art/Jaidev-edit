@@ -1,4 +1,4 @@
-// Copy button
+// ========== COPY BUTTON ==========
 function copyText(button) {
   const text = button.previousElementSibling.innerText;
   navigator.clipboard.writeText(text);
@@ -8,7 +8,7 @@ function copyText(button) {
   }, 1500);
 }
 
-// Search (home + category pages)
+// ========== SEARCH ==========
 document.addEventListener("keyup", function (e) {
   if (e.target.id === "search") {
     let value = e.target.value.toLowerCase();
@@ -22,29 +22,36 @@ document.addEventListener("keyup", function (e) {
   }
 });
 
-// Telegram popup – first visit only
+// ========== TELEGRAM POPUP (FIRST VISIT ONLY) ==========
 window.addEventListener("load", () => {
-  if (!localStorage.getItem("tgPopupShown")) {
-    document.getElementById("tgPopup").style.display = "flex";
+  const popup = document.getElementById("tgPopup");
+  if (popup && !localStorage.getItem("tgPopupShown")) {
+    popup.style.display = "flex";
   }
 });
 
 function closePopup() {
-  document.getElementById("tgPopup").style.display = "none";
-  localStorage.setItem("tgPopupShown", "yes");
+  const popup = document.getElementById("tgPopup");
+  if (popup) {
+    popup.style.display = "none";
+    localStorage.setItem("tgPopupShown", "yes");
+  }
 }
 
-// Dark mode toggle
+// ========== DARK MODE ==========
 const toggle = document.getElementById("darkToggle");
 
-if (localStorage.getItem("darkMode") === "on") {
-  document.body.classList.add("dark");
-}
+if (toggle) {
+  if (localStorage.getItem("darkMode") === "on") {
+    document.body.classList.add("dark");
+  }
 
-toggle.addEventListener("click", () => {
-  document.body.classList.toggle("dark");
-  localStorage.setItem(
-    "darkMode",
-    document.body.classList.contains("dark") ? "on" : "off"
-  );
-});
+  toggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+    localStorage.setItem(
+      "darkMode",
+      document.body.classList.contains("dark") ? "on" : "off"
+    );
+  });
+}
+<script src="../script.js"></script>
