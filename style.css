@@ -6,7 +6,6 @@ body {
   text-align: center;
 }
 
-/* HEADER */
 header {
   padding: 40px 20px;
   background: linear-gradient(135deg, #020617, #081a3a);
@@ -23,7 +22,6 @@ header p {
   font-size: 16px;
 }
 
-/* NAVBAR */
 nav {
   margin-top: 20px;
 }
@@ -35,11 +33,6 @@ nav a {
   font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-/* CONTENT */
 .container {
   padding: 60px 20px;
 }
@@ -56,7 +49,6 @@ nav a:hover {
   margin: auto;
 }
 
-/* BUTTON */
 .btn {
   display: inline-block;
   margin-top: 30px;
@@ -68,74 +60,10 @@ nav a:hover {
   text-decoration: none;
 }
 
-.btn:hover {
-  background: #0ea5e9;
-}
-
-/* FOOTER */
 footer {
   margin-top: 60px;
   padding: 20px;
   background: #020617;
   font-size: 14px;
   color: #94a3b8;
-}.post h2{color:#38bdf8;margin-top:0}
-
-/* PROMPT + COPY */
-.prompt-box{
-  position:relative;
-  background:#020617;
-  border-left:4px solid #38bdf8;
-  padding:16px;
-  margin-top:15px;
-  border-radius:8px;
-}
-
-.prompt-text{
-  font-family:monospace;
-  white-space:pre-wrap;
-  font-size:14px;
-}
-
-.copy-btn{
-  position:absolute;
-  top:10px;
-  right:10px;
-  background:#38bdf8;
-  color:#020617;
-  border:none;
-  padding:6px 12px;
-  border-radius:6px;
-  font-size:13px;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.copied{background:#22c55e!important}
-
-footer{
-  text-align:center;
-  padding:20px;
-  background:#020617;
-  color:#94a3b8;
-  font-size:14px;
-}}
-
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 25px;
-  background: #38bdf8;
-  color: #020617;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
-}
-
-footer {
-  margin-top: 40px;
-  padding: 15px;
-  background: #020617;
-  color: #64748b;
-  font-size: 14px;
 }
