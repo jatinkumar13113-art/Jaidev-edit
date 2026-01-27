@@ -1,20 +1,48 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Trending Prompts - JaidevEdit</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trending Prompts - JaidevEdit</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
 
 <header>
-<h1>🔥 Trending Prompts</h1>
+  <h1>🔥 Trending Prompts</h1>
+  <button id="darkToggle">🌙</button>
 </header>
 
-<div class="cards">
-  <div class="card">Ultra Cinematic Reel Prompt</div>
-  <div class="card">AI Face Safe Prompt</div>
-  <div class="card">8K Movie Look Prompt</div>
+<input type="text" id="search" placeholder="Search prompts...">
+
+<div class="movie-grid">
+
+  <div class="movie-card">
+    <img src="../assets/thumbnails/reel1.jpg" alt="thumbnail">
+    <p class="prompt-text">Ultra cinematic reel prompt with dramatic lighting and shallow depth</p>
+    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+  </div>
+
+  <div class="movie-card">
+    <img src="../assets/thumbnails/reel2.jpg" alt="thumbnail">
+    <p class="prompt-text">8K movie look prompt, ARRI Alexa style, soft color grading</p>
+    <button class="copy-btn" onclick="copyText(this)">Copy</button>
+  </div>
+
 </div>
 
+<a href="https://t.me/YourTelegramUsername" class="telegram-btn" target="_blank">Join Telegram</a>
+
+<div id="tgPopup" class="tg-popup">
+  <div class="tg-box">
+    <h3>🔥 Join Our Telegram</h3>
+    <p>Daily Trending Prompts</p>
+    <a href="https://t.me/YourTelegramUsername" class="tg-join" target="_blank">Join Now</a>
+    <button onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+<script src="../script.js"></script>
 </body>
 </html>
