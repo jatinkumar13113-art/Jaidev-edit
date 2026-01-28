@@ -1,99 +1,97 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f2f2f2;
-  color: #111;
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0b1220;
+  color:#fff;
 }
 
-body.dark {
-  background: #111;
-  color: #eee;
+header{
+  background:#0f1b3d;
+  padding:15px;
+  text-align:center;
+  position:relative;
 }
 
-header {
-  background: #000;
-  color: #fff;
-  padding: 15px;
-  text-align: center;
-  position: relative;
+#darkToggle{
+  position:absolute;
+  top:15px;
+  right:15px;
+  background:none;
+  border:none;
+  font-size:22px;
+  color:white;
 }
 
-#darkToggle {
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  background: none;
-  border: none;
-  color: #fff;
-  font-size: 20px;
+input{
+  width:90%;
+  margin:15px;
+  padding:12px;
+  border-radius:8px;
+  border:none;
 }
 
-.movie-grid {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 12px;
-  padding: 12px;
+.buttons a{
+  display:inline-block;
+  margin:8px;
+  padding:12px 18px;
+  border-radius:8px;
+  background:#1e90ff;
+  color:white;
+  text-decoration:none;
 }
 
-.movie-card {
-  background: #fff;
-  padding: 10px;
-  border-radius: 8px;
+.movie-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;
+  padding:15px;
 }
 
-body.dark .movie-card {
-  background: #1e1e1e;
+.movie-card{
+  background:#121c3c;
+  padding:15px;
+  border-radius:10px;
 }
 
-.thumb {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-  border-radius: 6px;
+.movie-card button{
+  width:100%;
+  margin-top:10px;
+  padding:10px;
+  background:#00d084;
+  border:none;
+  border-radius:6px;
 }
 
-.featured-image {
-  width: 100%;
-  max-height: 420px;
-  object-fit: cover;
-  border-radius: 8px;
+.telegram-btn{
+  display:block;
+  margin:20px;
+  padding:15px;
+  background:#229ED9;
+  color:white;
+  text-align:center;
+  text-decoration:none;
+  border-radius:10px;
 }
 
-.use-template-btn {
-  display: inline-block;
-  background: #e50914;
-  color: #fff;
-  padding: 14px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  font-size: 18px;
-  margin: 20px 0;
+.popup{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
 }
 
-/* TELEGRAM POPUP */
-.popup {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,.7);
-  z-index: 999;
+.popup-box{
+  background:#fff;
+  color:#000;
+  padding:20px;
+  border-radius:10px;
+  width:80%;
+  max-width:300px;
+  margin:25% auto;
+  text-align:center;
 }
 
-.popup-box {
-  background: #fff;
-  padding: 20px;
-  max-width: 300px;
-  margin: 25% auto;
-  text-align: center;
-  border-radius: 10px;
-}
-
-.popup-box a {
-  display: block;
-  background: #0088cc;
-  color: #fff;
-  padding: 10px;
-  text-decoration: none;
-  border-radius: 6px;
-  margin: 10px 0;
+.thumb{
+  width:100%;
+  border-radius:8px;
 }
