@@ -1,27 +1,58 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>JaidevEdit – CapCut Templates</title>
+<meta charset="UTF-8">
+<title>JaidevEdit – AI Prompts & CapCut Templates</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Trending AI Prompts, CapCut Templates, VN Codes & Reels Editing">
 <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-<h1>JaidevEdit</h1>
-<button id="darkToggle">🌙</button>
+  <h1>#JaidevEdit</h1>
+  <p>AI Training • Gemini Prompts • Reels</p>
+  <button id="darkToggle">🌙</button>
 </header>
+
+<input type="text" id="search" placeholder="Search AI prompts or templates...">
+
+<div class="buttons">
+  <a href="categories/trending-prompts.html">🔥 Trending Prompts</a>
+  <a href="categories/vn-codes.html">🎬 VN Codes</a>
+  <a href="categories/capcut-templates.html">✂️ CapCut Templates</a>
+  <a href="images.html">🖼 Images</a>
+</div>
+
+<h2>🔥 Latest Prompts</h2>
 
 <div class="movie-grid">
   <div class="movie-card">
-    <p>Top 100+ Trending CapCut Templates 2025</p>
-    <a href="categories/capcut-templates.html">Open</a>
+    <p class="text">
+Ultra realistic cinematic slow motion, dramatic lighting, shallow depth of field, 4K, film look
+    </p>
+    <button onclick="copyText(this)">Copy Prompt</button>
+  </div>
+
+  <div class="movie-card">
+    <p class="text">
+Instagram Reel viral hook in first 3 seconds, fast cuts, bold captions, beat sync
+    </p>
+    <button onclick="copyText(this)">Copy Prompt</button>
   </div>
 </div>
 
+<a class="telegram-btn" href="https://t.me/Jaidevjks" target="_blank">
+Join Telegram 🚀
+</a>
+
+<!-- TELEGRAM POPUP -->
 <div id="tgPopup" class="popup">
   <div class="popup-box">
     <h3>Join Telegram</h3>
-    <a href="https://t.me/Jaidevjks" target="_blank">Join Now</a>
+    <p>Daily AI Prompts & Templates</p>
+    <a href="https://t.me/Jaidevjks" target="_blank">Join Now</a><br><br>
     <button onclick="closePopup()">Close</button>
   </div>
 </div>
