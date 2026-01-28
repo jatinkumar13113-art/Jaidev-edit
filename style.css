@@ -1,116 +1,61 @@
-body{
-  margin:0;
-  font-family:Arial;
-  background:#0b1220;
-  color:#fff;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #0b1020;
+  color: #fff;
 }
 
-header{
-  background:#0f1b3d;
-  padding:15px;
-  text-align:center;
-  position:relative;
+.header {
+  text-align: center;
+  padding: 20px;
 }
 
-#darkToggle{
-  position:absolute;
-  right:15px;
-  top:15px;
-  font-size:22px;
-  background:none;
-  border:none;
-  color:white;
-  cursor:pointer;
+nav a {
+  margin: 0 10px;
+  color: #00eaff;
+  text-decoration: none;
 }
 
-input{
-  width:90%;
-  margin:15px;
-  padding:12px;
-  border-radius:8px;
-  border:none;
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap: 15px;
+  padding: 20px;
 }
 
-.buttons a{
-  display:inline-block;
-  margin:8px;
-  padding:12px 18px;
-  border-radius:8px;
-  background:#1e90ff;
-  color:white;
-  text-decoration:none;
+.card {
+  background: #111933;
+  padding: 15px;
+  border-radius: 10px;
 }
 
-.movie-grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:15px;
-  padding:15px;
+.card img, video {
+  width: 100%;
+  border-radius: 8px;
 }
 
-.movie-card{
-  background:#121c3c;
-  padding:15px;
-  border-radius:10px;
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  background: orange;
+  border-radius: 5px;
+  font-size: 12px;
 }
 
-.movie-card button{
-  margin-top:10px;
-  width:100%;
-  padding:10px;
-  background:#00d084;
-  border:none;
-  border-radius:6px;
-  cursor:pointer;
+.search-box input {
+  padding: 8px;
+  width: 60%;
 }
 
-.telegram-btn{
-  display:block;
-  margin:20px;
-  text-align:center;
-  padding:15px;
-  background:#229ED9;
-  color:white;
-  text-decoration:none;
-  border-radius:10px;
+.search-box button {
+  padding: 8px;
 }
 
-/* POPUP */
-.popup{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.7);
-}
-.popup-box{
-  background:white;
-  color:black;
-  padding:20px;
-  width:80%;
-  max-width:300px;
-  margin:25% auto;
-  border-radius:10px;
-  text-align:center;
-}
-
-/* 🌞 LIGHT MODE */
-body.light{
-  background:#f4f4f4;
-  color:#000;
-}
-body.light header{
-  background:#ffffff;
-  color:#000;
-}
-body.light .movie-card{
-  background:#ffffff;
-  color:#000;
-}
-body.light .movie-card button{
-  background:#00c853;
-  color:#000;
-}
-body.light input{
-  background:#fff;
-  color:#000;
+.telegram-popup {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #111;
+  padding: 15px;
+  border-radius: 10px;
 }
