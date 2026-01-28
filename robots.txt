@@ -1,4 +1,4 @@
 User-agent: *
-Allow: /
 
-Sitemap: https://jatinkumar13113-art.github.io/Jaidev-edit/sitemap.xml
+Allow /
+Sitemap: https://jatinkumar13113.github.io/Jaidev-edit/sitemap.xml
