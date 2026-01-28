@@ -1,35 +1,21 @@
-// COPY BUTTON
-function copyText(btn) {
+function copyText(btn){
   const text = btn.previousElementSibling.innerText;
   navigator.clipboard.writeText(text);
   btn.innerText = "Copied ✓";
-  setTimeout(() => btn.innerText = "Copy", 1500);
+  setTimeout(()=>btn.innerText="Copy Prompt",1500);
 }
 
-// DARK MODE
-const toggle = document.getElementById("darkToggle");
-if (localStorage.getItem("dark") === "on") {
-  document.body.classList.add("dark");
-}
-if (toggle) {
-  toggle.onclick = () => {
-    document.body.classList.toggle("dark");
-    localStorage.setItem(
-      "dark",
-      document.body.classList.contains("dark") ? "on" : "off"
-    );
-  };
-}
+document.getElementById("darkToggle").onclick = ()=>{
+  document.body.classList.toggle("light");
+};
 
-// TELEGRAM POPUP (FIRST VISIT)
-window.onload = () => {
-  if (!localStorage.getItem("tgShown")) {
-    const pop = document.getElementById("tgPopup");
-    if (pop) pop.style.display = "block";
+window.onload = ()=>{
+  if(!localStorage.getItem("tgPopup")){
+    document.getElementById("tgPopup").style.display="block";
+    localStorage.setItem("tgPopup","shown");
   }
 };
 
-function closePopup() {
-  document.getElementById("tgPopup").style.display = "none";
-  localStorage.setItem("tgShown", "yes");
+function closePopup(){
+  document.getElementById("tgPopup").style.display="none";
 }
