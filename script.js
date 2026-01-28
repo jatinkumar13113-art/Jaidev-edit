@@ -1,3 +1,11 @@
+// COPY BUTTON
+function copyText(btn) {
+  const text = btn.previousElementSibling.innerText;
+  navigator.clipboard.writeText(text);
+  btn.innerText = "Copied ✓";
+  setTimeout(() => btn.innerText = "Copy", 1500);
+}
+
 // DARK MODE
 const toggle = document.getElementById("darkToggle");
 if (localStorage.getItem("dark") === "on") {
@@ -13,7 +21,7 @@ if (toggle) {
   };
 }
 
-// TELEGRAM POPUP (FIRST VISIT ONLY)
+// TELEGRAM POPUP (FIRST VISIT)
 window.onload = () => {
   if (!localStorage.getItem("tgShown")) {
     const pop = document.getElementById("tgPopup");
