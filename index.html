@@ -1,62 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>JaidevEdit – AI Prompts & CapCut</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="AI Prompts, CapCut Templates, VN Codes">
-<link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8">
+  <title>Jaidev Edit – AI Photo & Video Editing, Reels & Prompts</title>
 
+  <meta name="description" content="AI Gemini Prompts, CapCut & VN Templates, Reels Editing, Trending AI Content">
+  <meta name="keywords" content="Gemini Prompts, CapCut Templates, VN Templates, AI Reels">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
-<header>
+<header class="header">
   <h1>#JaidevEdit</h1>
-  <p>AI Training • Gemini Prompts • Reels</p>
-  <button id="darkToggle">🌙</button>
+  <p>AI Training • Gemini Prompts • Reels • CapCut • VN</p>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="trending.html">Trending</a>
+    <a href="category/Gemini%20prompt/index.html">Gemini</a>
+    <a href="category/cupcut%20template/index.html">CapCut</a>
+    <a href="category/VN%20template/index.html">VN</a>
+  </nav>
+
+  <div class="search-box">
+    <input type="text" id="searchInput" placeholder="Search prompts or templates...">
+    <button onclick="searchContent()">Search</button>
+  </div>
 </header>
 
-<input type="text" id="search" placeholder="Search AI prompts, VN codes, templates...">
+<section class="grid">
 
-<div class="buttons">
-  <a href="categories/trending-prompts.html">🔥 Trending Prompts</a>
-  <a href="categories/vn-codes.html">🎬 VN Codes</a>
-  <a href="categories/capcut-templates.html">✂️ CapCut Templates</a>
-  <a href="images.html">🖼 Images</a>
-</div>
-
-<h2>🔥 Latest Prompts</h2>
-
-<div class="movie-grid">
-
-  <div class="movie-card">
-    <p class="text">
-Ultra realistic cinematic slow motion, dramatic lighting, 4K, film look
-    </p>
-    <button onclick="copyText(this)">Copy Prompt</button>
+  <div class="card" onclick="location.href='category/Gemini%20prompt/index.html'">
+    <h3>✨ Gemini Prompts</h3>
+    <p>Latest AI image & video prompts</p>
   </div>
 
-  <div class="movie-card">
-    <p class="text">
-Instagram reel viral hook in first 3 seconds, fast cuts, beat sync
-    </p>
-    <button onclick="copyText(this)">Copy Prompt</button>
+  <div class="card" onclick="location.href='category/cupcut%20template/index.html'">
+    <h3>🎬 CapCut Templates</h3>
+    <p>Trending video templates</p>
   </div>
 
-</div>
-
-<a class="telegram-btn" href="https://t.me/Jaidevjks" target="_blank">
-Join Telegram 🚀
-</a>
-
-<!-- TELEGRAM POPUP -->
-<div id="tgPopup" class="popup">
-  <div class="popup-box">
-    <h3>Join Telegram</h3>
-    <p>Daily AI Prompts & Templates</p>
-    <a href="https://t.me/Jaidevjks" target="_blank">Join Now</a><br><br>
-    <button onclick="closePopup()">Close</button>
+  <div class="card" onclick="location.href='category/VN%20template/index.html'">
+    <h3>✂️ VN Templates</h3>
+    <p>Smooth reel transitions</p>
   </div>
+
+</section>
+
+<footer>
+  © 2026 Jaidev Edit
+</footer>
+
+<div id="telegramPopup" class="telegram-popup">
+  <p>🔥 Join Telegram for Daily AI Prompts</p>
+  <a href="https://t.me/yourtelegram" target="_blank">Join Now</a>
+  <button onclick="closeTelegram()">✖</button>
 </div>
 
 <script src="script.js"></script>
