@@ -14,12 +14,13 @@ header{
 
 #darkToggle{
   position:absolute;
-  top:15px;
   right:15px;
+  top:15px;
+  font-size:22px;
   background:none;
   border:none;
-  font-size:22px;
   color:white;
+  cursor:pointer;
 }
 
 input{
@@ -54,44 +55,62 @@ input{
 }
 
 .movie-card button{
-  width:100%;
   margin-top:10px;
+  width:100%;
   padding:10px;
   background:#00d084;
   border:none;
   border-radius:6px;
+  cursor:pointer;
 }
 
 .telegram-btn{
   display:block;
   margin:20px;
+  text-align:center;
   padding:15px;
   background:#229ED9;
   color:white;
-  text-align:center;
   text-decoration:none;
   border-radius:10px;
 }
 
+/* POPUP */
 .popup{
   display:none;
   position:fixed;
   inset:0;
   background:rgba(0,0,0,0.7);
 }
-
 .popup-box{
-  background:#fff;
-  color:#000;
+  background:white;
+  color:black;
   padding:20px;
-  border-radius:10px;
   width:80%;
   max-width:300px;
   margin:25% auto;
+  border-radius:10px;
   text-align:center;
 }
 
-.thumb{
-  width:100%;
-  border-radius:8px;
+/* 🌞 LIGHT MODE */
+body.light{
+  background:#f4f4f4;
+  color:#000;
+}
+body.light header{
+  background:#ffffff;
+  color:#000;
+}
+body.light .movie-card{
+  background:#ffffff;
+  color:#000;
+}
+body.light .movie-card button{
+  background:#00c853;
+  color:#000;
+}
+body.light input{
+  background:#fff;
+  color:#000;
 }
