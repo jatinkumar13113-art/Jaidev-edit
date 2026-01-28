@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Trending – Jaidev Edit</title>
-  <link rel="stylesheet" href="style.css">
+<title>Trending – Jaidev Edit</title>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
 </head>
 <body>
 
 <h1>🔥 Trending Today</h1>
 
-<div class="grid">
-
-  <div class="card" data-date="2026-01-28">
-    <span class="badge"></span>
-    <h3>Cinematic Gemini Prompt</h3>
-    <button onclick="copyText('Ultra realistic cinematic lighting...')">Copy Prompt</button>
-  </div>
-
-  <div class="card" data-date="2026-01-26">
-    <span class="badge"></span>
-    <h3>CapCut Viral Template</h3>
-  </div>
-
+<div class="post-card" data-date="2026-01-26" data-category="vn">
+  <span class="badge"></span>
+  <h3>VN Cinematic Template</h3>
+  <p id="t1">Smooth cinematic VN transition pack</p>
+  <button onclick="copyText(document.getElementById('t1').innerText)">Copy</button>
 </div>
 
-<a href="index.html">← Back Home</a>
-
-<script src="script.js"></script>
 </body>
 </html>
