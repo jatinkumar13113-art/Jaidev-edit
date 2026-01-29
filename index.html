@@ -1,50 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Jaidev Edit – AI Editing</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="assets/css/style.css">
+    <meta charset="UTF-8">
+    <title>Jaidev Editing</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div id="telegramPopup">
-  <div class="popup">
-    <h3>Join Telegram 🔥</h3>
-    <a href="https://t.me/YOURCHANNEL" target="_blank">Join Now</a>
-    <button onclick="closePopup()">Close</button>
+<center>
+
+    <!-- Header -->
+    <header>
+        <p>🙏 Jai Shree Shyam 🙏</p>
+        <h1>Jaidev Editing</h1>
+        <p>Creative Editing & Templates</p>
+    </header>
+    <!-- SEARCH BAR -->
+<section align="center">
+    <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Search templates..."
+        onkeyup="searchItems()"
+    >
+</section>
+
+    <hr width="80%">
+
+    <!-- Navigation -->
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="categories.html">Categories</a> |
+        <a href="contact.html">Contact</a>
+        <a href="About.html">About</a>
+    </nav>
+
+    <hr width="80%">
+
+    <!-- Hero -->
+    <section>
+        <h2>Welcome to Jaidev Editing</h2>
+
+</center>
+
+<!-- ✅ Categories ONLY LEFT -->
+<section align="left">
+    <h2>Categories</h2>
+  
+
+    <ul>
+
+        <li><a href="capcut.html">CapCut Templates</a></li>
+        <li><a href="vn.html">VN Templates</a></li>
+        <li><a href="gemini.html">Gemini Prompts</a></li>
+        <li><a href="photo.html">New Style Photo</a></li>
+    </ul>
+</section>
+
+<center>
+
+    <hr width="80%">
+
+    <!-- About -->
+    <section>
+        <h2>About Jaidev Editing</h2>
+        <p>
+            Yah website editing templates, AI prompts aur creative
+            resources ke liye banayi gayi hai.  
+            Abhi basic HTML structure hai.
+        </p>
+    </section>
+
+    <hr width="80%">
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Jaidev Editing | Jai Shree Shyam</p>
+    </footer>
+
+</center>
+<div id="tgPopup" style="
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: rgba(0,0,0,0.6);
+display: none;
+z-index: 9999;
+">
+
+  <div style="
+  background: #ffffff;
+  width: 300px;
+  margin: 120px auto;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  ">
+      <h3>📢 Join Our Telegram</h3>
+      <p>CapCut • VN • Gemini Prompts</p>
+
+      <a href="https://t.me/jadevjks" target="_blank">
+          <button>👉 Join Telegram</button>
+      </a>
+
+      <br><br>
+
+      <button onclick="closePopup()">Close</button>
   </div>
 </div>
 
-<header>
-  <div class="shyam">🙏 जय श्री श्याम 🙏</div>
-  <h1>Jaidev Edit</h1>
-  <p>AI Photo • Video • Reels • Prompts</p>
-
-  <input id="search" placeholder="Search...">
-  <button onclick="toggleMode()">🌙</button>
-</header>
-
-<nav>
-  <a href="index.html">Home</a>
-  <a href="trending.html">Trending</a>
-  <a href="category/gemini/">Gemini</a>
-  <a href="category/capcut/">CapCut</a>
-  <a href="category/vn/">VN</a>
-</nav>
-
-<main id="list">
-  <div class="card">Gemini AI Prompts</div>
-  <div class="card">CapCut Templates</div>
-  <div class="card">VN Templates</div>
-</main>
-
-<footer>
-  <a href="pages/privacy-policy.html">Privacy</a> |
-  <a href="pages/disclaimer.html">Disclaimer</a>
-</footer>
-
-<script src="assets/js/script.js"></script>
+<script src="script.js"></script>
 </body>
-</html>.
+</html>
