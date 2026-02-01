@@ -1,0 +1,91 @@
+*{
+  box-sizing:border-box;
+}
+
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:Arial, sans-serif;
+  background:linear-gradient(135deg,#020617,#0f172a);
+}
+
+/* CENTER WRAPPER */
+.login-wrapper{
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+/* LOGIN BOX */
+.login-box{
+  width:100%;
+  max-width:340px;
+  background:#020617;
+  padding:28px;
+  border-radius:16px;
+  box-shadow:0 0 30px rgba(0,0,0,.7);
+}
+
+/* TITLE */
+.login-box h2{
+  text-align:center;
+  color:white;
+  margin-bottom:20px;
+}
+
+/* INPUTS */
+.login-box input{
+  width:100%;
+  padding:12px;
+  margin-bottom:12px;
+  border:none;
+  border-radius:10px;
+  background:#0f172a;
+  color:white;
+  font-size:15px;
+}
+
+/* PASSWORD EYE */
+.password-box{
+  position:relative;
+}
+
+.password-box span{
+  position:absolute;
+  right:12px;
+  top:50%;
+  transform:translateY(-50%);
+  cursor:pointer;
+  font-size:18px;
+}
+
+/* BUTTON */
+.login-box button{
+  width:100%;
+  padding:14px;
+  background:#22c55e;
+  border:none;
+  border-radius:12px;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+/* ERROR */
+#errorMsg{
+  text-align:center;
+  color:red;
+  margin-top:10px;
+  font-size:14px;
+}
+
+/* MOBILE SAFE */
+@media(max-width:480px){
+  .login-box{
+    margin:0 15px;
+  }
+}
