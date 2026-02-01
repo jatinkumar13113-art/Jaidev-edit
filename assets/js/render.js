@@ -61,4 +61,33 @@ function renderLatest(){
 document.addEventListener("DOMContentLoaded", ()=>{
   renderTrending();
   renderLatest();
+});// ================================
+// TRENDING DATA FROM ADMIN PANEL
+// ================================
+document.addEventListener("DOMContentLoaded", () => {
+
+  const trendingBox = document.getElementById("trendingBox");
+  if (!trendingBox) return;
+
+  const trendingData = JSON.parse(localStorage.getItem("trending")) || [];
+
+  if (trendingData.length === 0) {
+    trendingBox.innerHTML = "<p>No trending content</p>";
+    return;
+  }
+
+  trendingBox.innerHTML = "";
+
+  trendingData.reverse().forEach(item => {
+    const div = document.createElement("div");
+    div.className = "trend-card";
+
+    div.innerHTML = `
+      <h4>🔥 ${item.title}</h4>
+      <small>${item.type}</small>
+    `;
+
+    trendingBox.appendChild(div);
+  });
+
 });
