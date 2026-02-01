@@ -1,40 +1,96 @@
-body{
-  margin:0;
-  background:#020617;
-  color:white;
-  font-family:Arial;
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
 }
 
-.top{
-  display:flex;
-  justify-content:space-between;
-  padding:15px;
-  background:#020617;
+body {
+  margin: 0;
+  background: linear-gradient(135deg, #020617, #020617);
+  color: white;
 }
 
-.tabs{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  padding:15px;
+/* TOP BAR */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  background: #020617;
 }
 
-.tabs button{
-  background:#22c55e;
-  border:none;
-  padding:10px 14px;
-  border-radius:20px;
+.logout {
+  background: #22c55e;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.content{
-  display:flex;
-  justify-content:center;
+/* TABS */
+.tabs {
+  display: flex;
+  gap: 10px;
+  padding: 12px;
+  justify-content: center;
 }
 
-.tab-content{
-  display:none;
-  width:100%;
-  max-width:400px;
+.tabs button {
+  background: #22c55e;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* CONTENT */
+.content {
+  padding: 16px;
+}
+
+.tab-content {
+  display: none;
+  background: rgba(255,255,255,0.05);
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 20px;
+}
+
+.tab-content h3 {
+  margin-top: 0;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+}
+
+textarea {
+  min-height: 90px;
+}
+
+.uploadBtn {
+  width: 100%;
+  background: #22c55e;
+  border: none;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* STATUS */
+#uploadStatus {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 12px;
+}  max-width:400px;
   background:#0f172a;
   padding:20px;
   border-radius:15px;
