@@ -5,36 +5,63 @@
 <title>Admin Dashboard – JaidevEdit</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="css/admin.css">
+<style>
+body{
+  background:#0b1020;
+  color:#fff;
+  font-family:Arial;
+  padding:15px;
+}
+input, textarea, select, button{
+  width:100%;
+  padding:10px;
+  margin:8px 0;
+  border-radius:6px;
+  border:none;
+}
+button{
+  background:#22c55e;
+  color:#000;
+  font-weight:bold;
+}
+</style>
 </head>
 <body>
 
-<!-- TOP BAR -->
-<div class="top">
-  <div class="admin-name">JaidevEdit Admin</div>
-  <button class="logout" onclick="adminLogout()">Logout</button>
-</div>
+<h2>🔥 JaidevEdit Admin</h2>
 
-<!-- TABS -->
-<div class="tabs">
-  <button onclick="openTab('capcut')">CapCut</button>
-  <button onclick="openTab('vn')">VN</button>
-  <button onclick="openTab('gemini')">Gemini</button>
-  <button onclick="openTab('video')">Video</button>
-</div>
+<label>Content Type</label>
+<select id="type">
+  <option value="capcut">CapCut</option>
+  <option value="vn">VN</option>
+  <option value="gemini">Gemini</option>
+  <option value="video">Video</option>
+</select>
 
-<!-- CONTENT -->
-<div class="content">
+<input id="title" placeholder="Title">
 
-  <!-- CAPCUT -->
-  <div class="tab-content" id="capcut">
-    <h3>CapCut Upload</h3>
-    <input placeholder="Title">
-    <input type="file">
-    <input placeholder="CapCut Link">
-    <label><input type="checkbox"> Trending</label>
-    <button class="uploadBtn">Upload</button>
-  </div>
+<input id="thumb" placeholder="Thumbnail Image URL">
+
+<input id="link" placeholder="CapCut / Video Link (optional)">
+
+<input id="qr" placeholder="VN QR Code (optional)">
+
+<textarea id="prompt" placeholder="Gemini Prompt (optional)"></textarea>
+
+<label>
+  <input type="checkbox" id="trending"> Mark as Trending
+</label>
+
+<button onclick="uploadData()">UPLOAD</button>
+
+<p id="status"></p>
+
+<!-- Firebase -->
+<script type="module" src="js/firebase.js"></script>
+<script type="module" src="js/dashboard.js"></script>
+
+</body>
+</html>  </div>
 
   <!-- VN -->
   <div class="tab-content" id="vn">
