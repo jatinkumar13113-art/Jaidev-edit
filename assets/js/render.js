@@ -90,4 +90,28 @@ document.addEventListener("DOMContentLoaded", () => {
     trendingBox.appendChild(div);
   });
 
+});document.addEventListener("DOMContentLoaded", () => {
+
+  const box = document.getElementById("trendingBox");
+  if (!box) return;
+
+  const data = JSON.parse(localStorage.getItem("uploads")) || [];
+
+  if (data.length === 0) {
+    box.innerHTML = "<p>No uploads yet</p>";
+    return;
+  }
+
+  box.innerHTML = "";
+
+  data.reverse().forEach(item => {
+    const div = document.createElement("div");
+    div.className = "card";
+    div.innerHTML = `
+      <h4>🔥 ${item.title}</h4>
+      <small>${new Date(item.time).toLocaleString()}</small>
+    `;
+    box.appendChild(div);
+  });
 });
+
