@@ -1,18 +1,27 @@
+// ===============================
+// HELPER: get first trending item
+// ===============================
 function getFirstTrending(key){
   const data = JSON.parse(localStorage.getItem(key) || "[]");
-  return data.find(i => i.trending);
+  return data.find(item => item.trending === true);
 }
 
+// ===============================
+// RENDER TRENDING (HOME PAGE)
+// Priority: Video → CapCut → Gemini → VN
+// ===============================
 function renderTrending(){
-  let item =
+  const box = document.getElementById("trendingBox");
+  if(!box) return;
+
+  const item =
     getFirstTrending("video") ||
     getFirstTrending("capcut") ||
     getFirstTrending("gemini") ||
     getFirstTrending("vn");
 
   if(!item){
-    document.getElementById("trendingBox").innerHTML =
-      "<p>No trending content</p>";
+    box.innerHTML = "<p>No trending content</p>";
     return;
   }
 
@@ -20,98 +29,58 @@ function renderTrending(){
 
   if(item.video){
     action = `<video controls src="${item.video}"></video>`;
-  }
-  if(item.link){
+  } else if(item.link){
     action = `<a href="${item.link}" target="_blank">Use Template</a>`;
-  }
-  if(item.prompt){
+  } else if(item.prompt){
     action = `<pre>${item.prompt}</pre>`;
-  }
-  if(item.qr){
+  } else if(item.qr){
     action = `<p>VN QR: ${item.qr}</p>`;
   }
 
-  document.getElementById("trendingBox").innerHTML = `
-    <img src="${item.thumb}">
-    <h4>${item.title}</h4>
-    ${action}
+  box.innerHTML = `
+    <div class="card">
+      <img src="${item.thumb}">
+      <h4>${item.title}</h4>
+      ${action}
+    </div>
   `;
 }
 
+// ===============================
+// RENDER LATEST ITEMS
+// ===============================
 function renderLatest(){
   const box = document.getElementById("latestBox");
+  if(!box) return;
+
   const all = [
-    ...(JSON.parse(localStorage.getItem("capcut")||"[]")),
-    ...(JSON.parse(localStorage.getItem("gemini")||"[]")),
-    ...(JSON.parse(localStorage.getItem("vn")||"[]")),
-    ...(JSON.parse(localStorage.getItem("video")||"[]"))
-  ].slice(-5).reverse();
+    ...(JSON.parse(localStorage.getItem("capcut") || "[]")),
+    ...(JSON.parse(localStorage.getItem("gemini") || "[]")),
+    ...(JSON.parse(localStorage.getItem("vn") || "[]")),
+    ...(JSON.parse(localStorage.getItem("video") || "[]"))
+  ];
 
-  box.innerHTML = "";
-  all.forEach(i=>{
-    box.innerHTML += `
-      <div class="item">
-        <img src="${i.thumb}">
-        <div>${i.title}</div>
-      </div>
-    `;
-  });
-}
-
-document.addEventListener("DOMContentLoaded", ()=>{
-  renderTrending();
-  renderLatest();
-});// ================================
-// TRENDING DATA FROM ADMIN PANEL
-// ================================
-document.addEventListener("DOMContentLoaded", () => {
-
-  const trendingBox = document.getElementById("trendingBox");
-  if (!trendingBox) return;
-
-  const trendingData = JSON.parse(localStorage.getItem("trending")) || [];
-
-  if (trendingData.length === 0) {
-    trendingBox.innerHTML = "<p>No trending content</p>";
-    return;
-  }
-
-  trendingBox.innerHTML = "";
-
-  trendingData.reverse().forEach(item => {
-    const div = document.createElement("div");
-    div.className = "trend-card";
-
-    div.innerHTML = `
-      <h4>🔥 ${item.title}</h4>
-      <small>${item.type}</small>
-    `;
-
-    trendingBox.appendChild(div);
-  });
-
-});document.addEventListener("DOMContentLoaded", () => {
-
-  const box = document.getElementById("trendingBox");
-  if (!box) return;
-
-  const data = JSON.parse(localStorage.getItem("uploads")) || [];
-
-  if (data.length === 0) {
+  if(all.length === 0){
     box.innerHTML = "<p>No uploads yet</p>";
     return;
   }
 
   box.innerHTML = "";
 
-  data.reverse().forEach(item => {
-    const div = document.createElement("div");
-    div.className = "card";
-    div.innerHTML = `
-      <h4>🔥 ${item.title}</h4>
-      <small>${new Date(item.time).toLocaleString()}</small>
+  all.slice(-5).reverse().forEach(item => {
+    box.innerHTML += `
+      <div class="item">
+        <img src="${item.thumb}">
+        <div>${item.title}</div>
+      </div>
     `;
-    box.appendChild(div);
   });
-});
+}
 
+// ===============================
+// INIT
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  renderTrending();
+  renderLatest();
+});
