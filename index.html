@@ -1,38 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>JaidevEdit</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <title>JaidevEdit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="assets/css/style.css">
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-<header class="site-header">
-  <div class="bhakti-text">🙏 Jai Shri Shyam 🙏</div>
 
-  <div class="logo-box">
-    <img src="assets/images/logo.png" alt="JaidevEdit Logo">
-  </div>
-</header>
-<!-- HEADER -->
-<header class="top">
-  <h2>JaidevEdit 🔥</h2>
-</header>
+  <!-- HEADER -->
+  <header class="top">
+    <h2>🙏 Jai Shri Shyam 🙏</h2>
+    <p>JaidevEdit – Creative Hub</p>
+  </header>
 
-<!-- TRENDING -->
-<section class="section">
-  <h3>🔥 Trending</h3>
-  <div id="trendingBox" class="card"></div>
-</section>
+  <!-- TRENDING SECTION -->
+  <section class="section">
+    <h3>🔥 Trending</h3>
 
-<!-- LATEST -->
-<section class="section">
-  <h3>Latest Content</h3>
-  <div id="latestBox"></div>
-</section>
+    <!-- IMPORTANT: render.js yahin data inject karega -->
+    <div id="trendingBox">
+      <p>Loading...</p>
+    </div>
+  </section>
 
-<script src="assets/js/render.js"></script>
-<script src="assets/js/navbar.js"></script>
+  <!-- LATEST UPLOADS -->
+  <section class="section">
+    <h3>🆕 Latest Uploads</h3>
+    <div id="latestBox"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer style="text-align:center;padding:15px;color:#aaa;">
+    © 2026 JaidevEdit
+  </footer>
+
+  <!-- NAVBAR (Top + Bottom SVG icons) -->
+  <script src="assets/js/navbar.js"></script>
+
+  <!-- DATA RENDER (Trending + Latest) -->
+  <script src="assets/js/render.js"></script>
+
 </body>
 </html>
