@@ -1,1 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard – JaidevEdit</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
 
+<div class="top">
+  <b>JaidevEdit Admin</b>
+  <button onclick="adminLogout()">Logout</button>
+</div>
+
+<div class="tabs">
+  <button onclick="openTab('capcut')">CapCut</button>
+  <button onclick="openTab('vn')">VN</button>
+  <button onclick="openTab('gemini')">Gemini</button>
+  <button onclick="openTab('video')">Video</button>
+</div>
+
+<div class="content">
+
+  <div class="tab-content" id="capcut">
+    <input id="ccTitle" placeholder="Title">
+    <input type="file" id="ccThumb">
+    <input id="ccLink" placeholder="CapCut link">
+    <label><input type="checkbox" id="ccTrend"> Trending</label>
+    <button onclick="addCapcut()">Upload</button>
+  </div>
+
+  <div class="tab-content" id="vn">
+    <input id="vnTitle" placeholder="Title">
+    <input type="file" id="vnThumb">
+    <input id="vnQR" placeholder="VN QR Code">
+    <label><input type="checkbox" id="vnTrend"> Trending</label>
+    <button onclick="addVN()">Upload</button>
+  </div>
+
+  <div class="tab-content" id="gemini">
+    <input id="gTitle" placeholder="Title">
+    <input type="file" id="gThumb">
+    <textarea id="gPrompt" placeholder="Prompt"></textarea>
+    <label><input type="checkbox" id="gTrend"> Trending</label>
+    <button onclick="addGemini()">Upload</button>
+  </div>
+
+  <div class="tab-content" id="video">
+    <input id="vTitle" placeholder="Title">
+    <input type="file" id="vThumb">
+    <input type="file" id="vFile">
+    <label><input type="checkbox" id="vTrend"> Trending</label>
+    <button onclick="addVideo()">Upload</button>
+  </div>
+
+</div>
+
+<script src="js/auth.js"></script>
+<script src="js/dashboard.js"></script>
+</body>
+</html>
