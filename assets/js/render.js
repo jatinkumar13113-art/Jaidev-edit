@@ -1,40 +1,128 @@
 // ===============================
-// HELPER: get first trending item
+// IMPORT FIREBASE DB
 // ===============================
-function getFirstTrending(key){
-  const data = JSON.parse(localStorage.getItem(key) || "[]");
-  return data.find(item => item.trending === true);
+import { db } from "./firebase.js";
+
+import {
+  collection,
+  query,
+  orderBy,
+  limit,
+  getDocs
+} from "https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js";
+
+
+// ===============================
+// RENDER TRENDING (TOP 1)
+// ===============================
+async function renderTrending() {
+  const box = document.getElementById("trendingBox");
+  if (!box) return;
+
+  box.innerHTML = "Loading...";
+
+  try {
+    const q = query(
+      collection(db, "uploads"),
+      orderBy("createdAt", "desc"),
+      limit(10)
+    );
+
+    const snap = await getDocs(q);
+
+    let trendingItem = null;
+
+    snap.forEach(doc => {
+      const data = doc.data();
+      if (data.trending && !trendingItem) {
+        trendingItem = data;
+      }
+    });
+
+    if (!trendingItem) {
+      box.innerHTML = "<p>No trending content</p>";
+      return;
+    }
+
+    box.innerHTML = `
+      <div class="trend-card">
+        <img src="${trendingItem.thumb}" />
+        <h4>${trendingItem.title}</h4>
+
+        ${
+          trendingItem.link
+            ? `<a href="${trendingItem.link}" target="_blank">Open</a>`
+            : ""
+        }
+
+        ${
+          trendingItem.prompt
+            ? `<pre>${trendingItem.prompt}</pre>`
+            : ""
+        }
+
+        ${
+          trendingItem.qr
+            ? `<p>VN QR: ${trendingItem.qr}</p>`
+            : ""
+        }
+      </div>
+    `;
+  } catch (err) {
+    console.error(err);
+    box.innerHTML = "<p>Error loading trending</p>";
+  }
 }
 
-// ===============================
-// RENDER TRENDING (HOME PAGE)
-// Priority: Video → CapCut → Gemini → VN
-// ===============================
-function renderTrending(){
-  const box = document.getElementById("trendingBox");
-  if(!box) return;
 
-  const item =
-    getFirstTrending("video") ||
-    getFirstTrending("capcut") ||
-    getFirstTrending("gemini") ||
-    getFirstTrending("vn");
+// ===============================
+// RENDER LATEST (LAST 6)
+// ===============================
+async function renderLatest() {
+  const box = document.getElementById("latestBox");
+  if (!box) return;
 
-  if(!item){
-    box.innerHTML = "<p>No trending content</p>";
-    return;
+  box.innerHTML = "";
+
+  try {
+    const q = query(
+      collection(db, "uploads"),
+      orderBy("createdAt", "desc"),
+      limit(6)
+    );
+
+    const snap = await getDocs(q);
+
+    if (snap.empty) {
+      box.innerHTML = "<p>No uploads yet</p>";
+      return;
+    }
+
+    snap.forEach(doc => {
+      const d = doc.data();
+
+      box.innerHTML += `
+        <div class="item">
+          <img src="${d.thumb}" />
+          <div class="title">${d.title}</div>
+          <small>${d.type}</small>
+        </div>
+      `;
+    });
+  } catch (err) {
+    console.error(err);
+    box.innerHTML = "<p>Error loading data</p>";
   }
+}
 
-  let action = "";
 
-  if(item.video){
-    action = `<video controls src="${item.video}"></video>`;
-  } else if(item.link){
-    action = `<a href="${item.link}" target="_blank">Use Template</a>`;
-  } else if(item.prompt){
-    action = `<pre>${item.prompt}</pre>`;
-  } else if(item.qr){
-    action = `<p>VN QR: ${item.qr}</p>`;
+// ===============================
+// INIT
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  renderTrending();
+  renderLatest();
+});    action = `<p>VN QR: ${item.qr}</p>`;
   }
 
   box.innerHTML = `
