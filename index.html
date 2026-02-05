@@ -1,69 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jaidev Edit</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jaidev Edit</title>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Sidebar -->
 <div id="sidebar" class="sidebar">
   <h2>Jaidev Edit</h2>
-  <a onclick="showSection('capcut')">CapCut</a>
-  <a onclick="showSection('vn')">VN</a>
-  <a onclick="showSection('gemini')">Gemini</a>
+  <a href="index.html">Home</a>
+  <a href="capcut.html">CapCut</a>
+  <a href="vn.html">VN</a>
+  <a href="gemini.html">Gemini</a>
 </div>
-
-<!-- Overlay -->
 <div id="overlay" onclick="closeSidebar()"></div>
 
-<!-- Header -->
 <header>
-  <button class="menu-btn" onclick="openSidebar()">☰</button>
+  <button onclick="openSidebar()">☰</button>
   <h1>Jaidev Edit</h1>
-  <p>CapCut • VN • Gemini Prompts</p>
+  <p>Trending Templates</p>
 </header>
 
-<!-- Content -->
 <main>
-
-<!-- CAPCUT -->
-<section id="capcut" class="content active">
-  <h2>CapCut Templates</h2>
+  <div class="card">
+    <img src="assets/t1.jpg">
+    <h3>Cinematic Beat (Trending)</h3>
+    <p>Top CapCut template</p>
+    <a href="capcut.html" class="btn">Open Category</a>
+  </div>
 
   <div class="card">
-    <img src="assets/thumb1.jpg">
-    <h3>Cinematic Beat</h3>
-    <p>Best beat sync template</p>
-    <a href="https://t.me/JaidevCapCut" target="_blank" class="btn">Download (Telegram)</a>
+    <img src="assets/t2.jpg">
+    <h3>AI Cinematic Prompt</h3>
+    <p>Trending Gemini prompt</p>
+    <a href="gemini.html" class="btn">Open Category</a>
   </div>
-</section>
-
-<!-- VN -->
-<section id="vn" class="content">
-  <h2>VN Templates</h2>
-
-  <div class="card">
-    <img src="assets/thumb2.jpg">
-    <h3>Reel Velocity</h3>
-    <p>Fast reel VN project</p>
-    <a href="https://t.me/JaidevVN" target="_blank" class="btn">Download (Telegram)</a>
-  </div>
-</section>
-
-<!-- GEMINI -->
-<section id="gemini" class="content">
-  <h2>Gemini Prompts</h2>
-
-  <div class="card">
-    <h3>Cinematic AI Prompt</h3>
-    <p>Same man riding a vintage motorcycle downhill</p>
-    <a href="https://t.me/JaidevGemini" target="_blank" class="btn">Open Channel</a>
-  </div>
-</section>
-
 </main>
 
 <script src="app.js"></script>
