@@ -1,92 +1,45 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
-}
+body { background:#0e0e0e; color:#fff; font-family:sans-serif; margin:0; }
+header { padding:20px; text-align:center; background:#111; }
+button { background:none; border:none; color:#00ffd5; font-size:22px; position:absolute; left:15px; top:18px; }
 
-body {
-  background: #0f0f0f;
-  color: #fff;
-}
-
-/* Header */
-header {
-  text-align: center;
-  padding: 20px;
-  background: #111;
-  position: relative;
-}
-
-.menu-btn {
-  position: absolute;
-  left: 15px;
-  top: 20px;
-  font-size: 22px;
-  background: none;
-  color: #00ffd5;
-  border: none;
-}
-
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100%;
-  background: #111;
-  padding: 20px;
-  transition: 0.3s;
-  z-index: 10;
-}
-
-.sidebar a {
-  display: block;
-  padding: 12px;
-  color: #00ffd5;
-  text-decoration: none;
-}
-
-#overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  display: none;
-  z-index: 9;
-}
-
-/* Content */
-main {
-  padding: 20px;
-}
-
-.content {
-  display: none;
-}
-
-.content.active {
-  display: block;
-}
+main { padding:20px; }
 
 .card {
-  background: #1a1a1a;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+  background:#1a1a1a;
+  padding:15px;
+  border-radius:10px;
+  margin-bottom:20px;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 8px;
-}
+.card img { width:100%; border-radius:8px; }
 
 .btn {
-  display: inline-block;
-  margin-top: 10px;
-  background: #00c853;
-  padding: 10px 15px;
-  border-radius: 6px;
-  color: #000;
-  text-decoration: none;
+  display:inline-block;
+  margin-top:10px;
+  background:#00c853;
+  color:#000;
+  padding:10px 15px;
+  border-radius:6px;
+  text-decoration:none;
+}
+
+.sidebar {
+  position:fixed;
+  left:-260px;
+  top:0;
+  width:260px;
+  height:100%;
+  background:#111;
+  padding:20px;
+  transition:0.3s;
+  z-index:10;
+}
+
+.sidebar a { display:block; padding:12px; color:#00ffd5; text-decoration:none; }
+
+#overlay {
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
 }
