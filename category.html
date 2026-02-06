@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Category | JaidevEdit</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <img src="assets/logo.png" class="logo">
+  <span class="site-name">JaidevEdit</span>
+  <div id="menuBtn" onclick="toggleMenu()">☰</div>
+</header>
+
+<div id="sidebar"></div>
+<div id="overlay" onclick="closeMenu()"></div>
+
+<h2 id="catTitle"></h2>
+<input id="searchInput" placeholder="Search..." onkeyup="searchCategory()">
+
+<div id="categoryList" class="card-container"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

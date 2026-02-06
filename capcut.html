@@ -1,27 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CapCut Templates</title>
-<link rel="stylesheet" href="style.css">
+  <title>CapCut</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<header>
-  <button onclick="openSidebar()">☰</button>
-  <h1>CapCut Templates</h1>
+<header class="topbar">
+  <span class="site-name">JaidevEdit</span>
+  <div id="menuBtn">☰</div>
 </header>
 
-<main>
-  <div class="card">
-    <img src="assets/t1.jpg">
-    <h3>Cinematic Beat</h3>
-    <p>Beat sync template</p>
-    <a href="https://t.me/JaidevCapCut" target="_blank" class="btn">Download (Telegram)</a>
-  </div>
-</main>
+<div id="sidebar"></div>
+<div id="overlay"></div>
 
-<script src="app.js"></script>
+<h2>CapCut</h2>
+<input id="searchInput" placeholder="Search CapCut..." onkeyup="searchFixed('CapCut')">
+<div id="fixedList" class="card-container"></div>
+
+<script src="js/main.js"></script>
 </body>
 </html>

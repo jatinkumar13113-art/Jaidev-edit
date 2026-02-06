@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <span class="site-name">Admin Panel</span>
+</header>
+
+<div id="loginBox">
+  <input type="password" id="pass" placeholder="Admin Password">
+  <button onclick="login()">Login</button>
+</div>
+
+<div id="adminPanel" style="display:none">
+
+  <input id="title" placeholder="Title">
+  <input id="thumb" placeholder="Thumbnail URL"
+         oninput="autoConvertDriveURL();previewThumbnail()">
+
+  <div id="thumbPreviewBox">
+    <p>Thumbnail Preview</p>
+    <img id="thumbPreview">
+  </div>
+
+  <input id="drive" placeholder="Download / Drive Link">
+
+  <textarea id="prompt" placeholder="Gemini Prompt (only for Gemini)"></textarea>
+
+  <select id="category">
+    <option>CapCut</option>
+    <option>VN</option>
+    <option>Gemini</option>
+  </select>
+
+  <button onclick="uploadTrending()">Save</button>
+
+  <div id="adminList" class="card-container"></div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
