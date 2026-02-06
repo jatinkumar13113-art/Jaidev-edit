@@ -1,92 +1,268 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+/* ================= RESET ================= */
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial;
+  background:#070812;
+  color:#eaeaf0;
+}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+
+/* ================= TOP BAR ================= */
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px 16px;
+  background:linear-gradient(135deg,#0c0e2a,#120a2f);
+  border-bottom:1px solid rgba(255,255,255,.08);
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+.site-name{
+  font-size:18px;
+  font-weight:800;
+  background:linear-gradient(90deg,#9b8cff,#00ffd5,#ff6ad5);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+#menuBtn{font-size:26px;cursor:pointer;color:#e5e7eb}
+
+/* ================= SIDEBAR ================= */
+#sidebar{
+  position:fixed;
+  top:0;left:-260px;
+  width:240px;height:100%;
+  background:linear-gradient(180deg,#0c0e2a,#08081c);
+  padding-top:70px;
+  transition:.3s;
+  z-index:1100;
+}
+#sidebar.open{left:0}
+#sidebar a{
+  display:block;
+  padding:14px 18px;
+  border-bottom:1px solid rgba(255,255,255,.06);
+  color:#e5e7eb;
+}
+#sidebar a:hover{
+  background:linear-gradient(
+    90deg,
+    rgba(155,140,255,.15),
+    rgba(0,255,213,.15)
+  );
 }
 
-body {
-  background: #0f0f0f;
-  color: #fff;
+/* ================= OVERLAY ================= */
+#overlay{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.6);
+  display:none;
+  z-index:1050;
+}
+#overlay.show{display:block}
+
+/* ================= HEADINGS ================= */
+h2{
+  padding:14px 16px 8px;
+  font-size:17px;
+  font-weight:700;
+  color:#f8fafc;
 }
 
-/* Header */
-header {
-  text-align: center;
-  padding: 20px;
-  background: #111;
-  position: relative;
+/* =================================================
+   HOME – TRENDING CARD (CENTER IMAGE + TEXT BELOW)
+   AUTO PC + MOBILE
+================================================= */
+.single-trending-card{
+  display:flex;
+  flex-direction:column;        /* image upar, text niche */
+  align-items:center;
+  text-align:center;
+  gap:6px;
+  margin:16px;
+  padding:16px;
+  background:rgba(20,22,56,.65);
+  border-radius:18px;
+  border:1px solid rgba(155,140,255,.28);
+  box-shadow:
+    0 0 10px rgba(155,140,255,.12),
+    0 0 18px rgba(0,255,213,.08);
 }
 
-.menu-btn {
-  position: absolute;
-  left: 15px;
-  top: 20px;
-  font-size: 22px;
-  background: none;
-  color: #00ffd5;
-  border: none;
+/* Thumbnail */
+.single-trending-card img{
+  width:120px;
+  max-height:160px;
+  height:auto;
+  object-fit:contain;
+  background:#02031a;
+  border-radius:12px;
 }
 
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: -260px;
-  width: 260px;
-  height: 100%;
-  background: #111;
-  padding: 20px;
-  transition: 0.3s;
-  z-index: 10;
+/* Text */
+.single-trending-card h3{
+  font-size:15px;
+  margin-top:6px;
+}
+.single-trending-card p{
+  font-size:13px;
+  color:#a5b4fc;
 }
 
-.sidebar a {
-  display: block;
-  padding: 12px;
-  color: #00ffd5;
-  text-decoration: none;
+/* Tablet */
+@media(max-width:768px){
+  .single-trending-card img{
+    width:140px;
+    max-height:190px;
+  }
 }
 
-#overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.5);
-  display: none;
-  z-index: 9;
+/* Mobile */
+@media(max-width:480px){
+  .single-trending-card img{
+    width:160px;
+    max-height:220px;
+  }
 }
 
-/* Content */
-main {
-  padding: 20px;
+/* ================= CATEGORY LINKS ================= */
+.category-links{padding:14px}
+.category-links a{
+  display:block;
+  padding:14px 16px;
+  margin-bottom:10px;
+  background:rgba(20,22,56,.65);
+  border-radius:14px;
+  font-weight:700;
+  border:1px solid rgba(255,106,213,.28);
+  box-shadow:0 0 10px rgba(255,106,213,.18);
 }
 
-.content {
-  display: none;
+/* ================= CARDS (TRENDING / CATEGORY) ================= */
+.card-container{display:grid;grid-template-columns:1fr}
+.card{
+  background:rgba(20,22,56,.7);
+  margin:14px;
+  border-radius:18px;
+  overflow:hidden;
+  border:1px solid rgba(155,140,255,.28);
+  box-shadow:
+    0 0 12px rgba(155,140,255,.14),
+    0 0 20px rgba(0,255,213,.10);
+}
+.thumb{
+  width:100%;
+  height:auto;
+  max-height:360px;
+  object-fit:contain;
+  background:#02031a;
+}
+.card h3{padding:12px 14px 4px;font-size:15px}
+.card p{padding:0 14px 8px;font-size:13px;color:#9aa4ff}
+
+/* ================= BUTTONS ================= */
+button{
+  width:90%;
+  margin:12px auto;
+  padding:12px;
+  display:block;
+  background:linear-gradient(135deg,#9b8cff,#00ffd5,#ff6ad5);
+  color:#05060f;
+  border:none;
+  border-radius:14px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:
+    0 0 10px rgba(155,140,255,.35),
+    0 0 16px rgba(0,255,213,.25);
+}
+button:hover{
+  filter:brightness(1.05);
 }
 
-.content.active {
-  display: block;
+/* ================= INPUTS ================= */
+input,select,textarea{
+  width:92%;
+  margin:12px auto;
+  padding:12px;
+  display:block;
+  border-radius:14px;
+  border:1px solid rgba(155,140,255,.28);
+  background:#02031a;
+  color:#e5e7eb;
+  font-size:14px;
+}
+textarea{min-height:90px}
+
+/* ================= GEMINI PROMPT ================= */
+.prompt-box{
+  margin:12px;
+  padding:12px;
+  border-radius:14px;
+  background:#02031a;
+  border-left:4px solid #00ffd5;
+  box-shadow:0 0 10px rgba(0,255,213,.25);
 }
 
-.card {
-  background: #1a1a1a;
-  padding: 15px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+/* ================= ADMIN ================= */
+#loginBox{padding:24px}
+#adminPanel{padding-bottom:30px}
+
+/* ================= THUMB PREVIEW ================= */
+#thumbPreviewBox{
+  margin:12px;
+  padding:12px;
+  border-radius:14px;
+  text-align:center;
+  background:#02031a;
+  border:1px solid rgba(255,106,213,.35);
+}
+#thumbPreview{
+  width:100%;
+  max-height:220px;
+  object-fit:contain;
+  display:none;
+  background:#000;
+  border-radius:12px;
 }
 
-.card img {
-  width: 100%;
-  border-radius: 8px;
+/* ================= TELEGRAM POPUP ================= */
+#tgPopup{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.7);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:2000;
+}
+.tg-box{
+  background:linear-gradient(180deg,#0c0e2a,#08081c);
+  padding:24px;
+  border-radius:20px;
+  width:260px;
+  text-align:center;
+  border:1px solid rgba(155,140,255,.35);
+}
+.tg-box p{
+  color:#00ffd5;
+  font-weight:800;
+}
+.tg-close{
+  position:absolute;
+  top:10px;
+  right:14px;
+  font-size:20px;
+  cursor:pointer;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 10px;
-  background: #00c853;
-  padding: 10px 15px;
-  border-radius: 6px;
-  color: #000;
-  text-decoration: none;
+/* ================= SEARCH ================= */
+#searchInput{width:92%}
+
+/* ================= MOBILE ================= */
+@media(max-width:480px){
+  .site-name{font-size:16px}
 }
