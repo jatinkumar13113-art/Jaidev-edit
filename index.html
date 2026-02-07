@@ -4,24 +4,18 @@
   <meta charset="UTF-8">
   <title>JaidevEdit</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <!-- MAIN CSS -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-<!-- TOP BAR -->
 <header class="topbar">
   <span class="site-name">JaidevEdit</span>
-  <button id="menuBtn" aria-label="Menu">☰</button>
+  <button id="menuBtn">☰</button>
 </header>
 
-<!-- SIDEBAR -->
 <nav id="sidebar">
-  <a href="index.html">Home</a>
-  <a href="trending.html">Trending</a>
+  <a href="index.html" class="active">Home</a>
   <a href="capcut.html">CapCut</a>
-  <a href="vn.html">VN</a>
   <a href="gemini.html">Gemini</a>
   <a href="admin.html">Admin</a>
 </nav>
@@ -30,7 +24,7 @@
 <!-- TELEGRAM POPUP -->
 <div id="tgPopup">
   <div class="tg-box">
-    <span class="tg-close" id="tgClose">✖</span>
+    <button class="tg-close" id="tgClose">✖</button>
     <h3>Join Our Telegram</h3>
     <p>@jaidevjks</p>
     <button id="tgJoin">Join Now</button>
@@ -39,24 +33,20 @@
 
 <main class="container">
 
-  <!-- TRENDING -->
   <h2>🔥 Trending</h2>
 
-  <a href="trending.html" class="single-trending-card">
-    <img id="homeTrendingThumb" src="icons/trending.png" alt="Trending">
-    <div class="trend-text">
+  <div class="card-container">
+    <div class="card">
+      <img class="thumb" src="https://picsum.photos/600/400" alt="">
       <h3>Trending Content</h3>
-      <p>Latest uploads</p>
+      <button>Download</button>
     </div>
-  </a>
+  </div>
 
-  <!-- CATEGORIES -->
   <h2>📂 Categories</h2>
-
   <div class="category-links">
-    <a href="capcut.html">CapCut</a>
-    <a href="vn.html">VN</a>
-    <a href="gemini.html">Gemini</a>
+    <a href="capcut.html" class="cat">CapCut</a>
+    <a href="gemini.html" class="cat">Gemini</a>
   </div>
 
 </main>
