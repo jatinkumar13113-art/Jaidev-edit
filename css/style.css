@@ -161,3 +161,65 @@ body {
   #sidebar { left:0; }
   .container { margin-left:260px; }
 }
+/***********************
+ ADMIN PANEL FIX
+************************/
+
+/* Admin container spacing */
+.admin-container {
+  max-width: 100%;
+  padding: 0;
+}
+
+/* Admin card full width */
+.admin-card {
+  width: 100%;
+}
+
+/* Inputs, textarea, select, button – full width */
+.admin-card input,
+.admin-card textarea,
+.admin-card select,
+.admin-card button {
+  width: 100% !important;
+  display: block;
+}
+
+/* Prevent side-by-side inputs */
+.admin-card input + input {
+  margin-top: 12px;
+}
+
+/* Save button spacing */
+.admin-card button {
+  margin-top: 10px;
+}
+
+/* Thumbnail preview fix */
+#thumbPreviewBox {
+  width: 100%;
+  text-align: center;
+}
+
+#thumbPreview {
+  width: 100%;
+  max-height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* Uploaded items grid fix */
+#adminList.card-container {
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+
+/* Mobile – force single column */
+@media (max-width: 768px) {
+  #adminList.card-container {
+    grid-template-columns: 1fr !important;
+  }
+
+  .admin-card {
+    padding: 14px;
+  }
+}
