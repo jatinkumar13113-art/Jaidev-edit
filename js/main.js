@@ -9,7 +9,7 @@ const ADMIN_PASSWORD = "12345";
 let trending = JSON.parse(localStorage.getItem("trending")) || [];
 
 /***********************
- SLIDER – ALL PAGES
+ SIDEBAR – MOBILE + PC
 ************************/
 document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menuBtn");
@@ -18,16 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (menuBtn && sidebar && overlay) {
     menuBtn.onclick = () => {
-      sidebar.classList.add("open");
-      overlay.classList.add("show");
+      sidebar.style.left = "0";
+      overlay.style.display = "block";
     };
+
     overlay.onclick = () => {
-      sidebar.classList.remove("open");
-      overlay.classList.remove("show");
+      sidebar.style.left = "-260px";
+      overlay.style.display = "none";
     };
   }
 
-  // HOME – latest thumbnail (old UI)
+  /* HOME – latest trending thumb */
   const homeThumb = document.getElementById("homeTrendingThumb");
   if (homeThumb && trending.length > 0) {
     homeThumb.src = trending[trending.length - 1].thumbnail;
@@ -93,16 +94,16 @@ function login() {
 }
 
 /***********************
- UPLOAD POST (PERMANENT)
+ UPLOAD POST
 ************************/
 function uploadTrending() {
   const title = document.getElementById("title").value.trim();
   const thumb = document.getElementById("thumb").value.trim();
   const drive = document.getElementById("drive").value.trim();
   const category = document.getElementById("category").value.trim();
-  const prompt = document.getElementById("prompt")
-    ? document.getElementById("prompt").value.trim()
-    : "";
+  const promptEl = document.getElementById("prompt");
+
+  const prompt = promptEl ? promptEl.value.trim() : "";
 
   if (!title || !thumb || !drive || !category) {
     alert("All fields required");
@@ -111,10 +112,10 @@ function uploadTrending() {
 
   trending.push({
     id: Date.now(),
-    title: title,
+    title,
     thumbnail: thumb,
-    drive: drive,
-    category: category,   // 🔥 category saved permanently
+    drive,
+    category,
     prompt: category === "Gemini" ? prompt : ""
   });
 
@@ -123,8 +124,7 @@ function uploadTrending() {
   document.getElementById("title").value = "";
   document.getElementById("thumb").value = "";
   document.getElementById("drive").value = "";
-  if (document.getElementById("prompt"))
-    document.getElementById("prompt").value = "";
+  if (promptEl) promptEl.value = "";
   document.getElementById("category").value = "";
 
   renderAdmin();
@@ -152,7 +152,7 @@ function renderAdmin() {
 }
 
 /***********************
- DELETE (ONLY MANUAL)
+ DELETE ITEM
 ************************/
 function deleteItem(id) {
   trending = trending.filter(item => item.id !== id);
@@ -161,7 +161,7 @@ function deleteItem(id) {
 }
 
 /***********************
- GEMINI FUNCTIONS
+ GEMINI ACTIONS
 ************************/
 function copyPrompt(id) {
   const el = document.getElementById("prompt-" + id);
@@ -203,7 +203,7 @@ function renderCard(i, box) {
 }
 
 /***********************
- LOAD TRENDING PAGE
+ PAGE LOADERS (SAFE)
 ************************/
 function loadTrending() {
   const box = document.getElementById("trendingList");
@@ -213,9 +213,6 @@ function loadTrending() {
   trending.forEach(i => renderCard(i, box));
 }
 
-/***********************
- LOAD CATEGORY PAGE
-************************/
 function loadFixed(category) {
   const box = document.getElementById("fixedList");
   if (!box) return;
@@ -226,11 +223,9 @@ function loadFixed(category) {
     .forEach(i => renderCard(i, box));
 }
 
-/***********************
- SEARCH CATEGORY PAGE
-************************/
 function searchFixed(category) {
-  const key = document.getElementById("searchInput").value.toLowerCase();
+  const input = document.getElementById("searchInput");
+  const key = input ? input.value.toLowerCase() : "";
   const box = document.getElementById("fixedList");
   if (!box) return;
 
@@ -243,11 +238,3 @@ function searchFixed(category) {
     )
     .forEach(i => renderCard(i, box));
 }
-
-/***********************
- AUTO LOAD (SAFE)
-************************/
-loadTrending();
-loadFixed("CapCut");
-loadFixed("VN");
-loadFixed("Gemini");
