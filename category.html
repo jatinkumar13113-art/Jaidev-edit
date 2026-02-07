@@ -1,25 +1,85 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>Category | JaidevEdit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- TOP BAR -->
 <header class="topbar">
-  <img src="assets/logo.png" class="logo">
+  <img src="assets/logo.png" class="logo" alt="Logo">
   <span class="site-name">JaidevEdit</span>
-  <div id="menuBtn" onclick="toggleMenu()">☰</div>
+  <button id="menuBtn">☰</button>
 </header>
 
-<div id="sidebar"></div>
-<div id="overlay" onclick="closeMenu()"></div>
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="trending.html">Trending</a>
+  <a href="capcut.html">CapCut</a>
+  <a href="vn.html">VN</a>
+  <a href="gemini.html">Gemini</a>
+  <a href="admin.html">Admin</a>
+</nav>
+<div id="overlay"></div>
 
-<h2 id="catTitle"></h2>
-<input id="searchInput" placeholder="Search..." onkeyup="searchCategory()">
+<!-- MAIN -->
+<main class="container">
 
-<div id="categoryList" class="card-container"></div>
+  <h2 id="catTitle">Category</h2>
+
+  <input
+    id="searchInput"
+    class="search-box"
+    placeholder="Search..."
+    onkeyup="searchCategory()"
+  >
+
+  <div id="categoryList" class="card-container"></div>
+
+</main>
 
 <script src="js/main.js"></script>
+<script>
+  /* LOAD CATEGORY FROM URL ?cat=CapCut */
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("cat");
+
+  const titleEl = document.getElementById("catTitle");
+  if (category && titleEl) {
+    titleEl.innerText = category;
+    loadCategory(category);
+  }
+
+  function loadCategory(cat) {
+    const box = document.getElementById("categoryList");
+    if (!box) return;
+
+    box.innerHTML = "";
+    trending
+      .filter(i => i.category === cat)
+      .forEach(i => renderCard(i, box));
+  }
+
+  function searchCategory() {
+    const key = document.getElementById("searchInput").value.toLowerCase();
+    const box = document.getElementById("categoryList");
+    if (!box) return;
+
+    box.innerHTML = "";
+    trending
+      .filter(
+        i =>
+          i.category === category &&
+          i.title.toLowerCase().includes(key)
+      )
+      .forEach(i => renderCard(i, box));
+  }
+</script>
+
 </body>
 </html>
