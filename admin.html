@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Admin</title>
+  <meta charset="UTF-8">
+  <title>Admin Panel</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -10,36 +13,52 @@
   <span class="site-name">Admin Panel</span>
 </header>
 
-<div id="loginBox">
-  <input type="password" id="pass" placeholder="Admin Password">
-  <button onclick="login()">Login</button>
-</div>
+<main class="container admin-container">
 
-<div id="adminPanel" style="display:none">
-
-  <input id="title" placeholder="Title">
-  <input id="thumb" placeholder="Thumbnail URL"
-         oninput="autoConvertDriveURL();previewThumbnail()">
-
-  <div id="thumbPreviewBox">
-    <p>Thumbnail Preview</p>
-    <img id="thumbPreview">
+  <!-- LOGIN -->
+  <div id="loginBox" class="admin-card">
+    <h3>Admin Login</h3>
+    <input type="password" id="pass" placeholder="Admin Password">
+    <button onclick="login()">Login</button>
   </div>
 
-  <input id="drive" placeholder="Download / Drive Link">
+  <!-- ADMIN PANEL -->
+  <div id="adminPanel" style="display:none">
 
-  <textarea id="prompt" placeholder="Gemini Prompt (only for Gemini)"></textarea>
+    <div class="admin-card">
+      <h3>Add New Content</h3>
 
-  <select id="category">
-    <option>CapCut</option>
-    <option>VN</option>
-    <option>Gemini</option>
-  </select>
+      <input id="title" placeholder="Title">
 
-  <button onclick="uploadTrending()">Save</button>
+      <input id="thumb" placeholder="Thumbnail URL"
+        oninput="autoConvertDriveURL();previewThumbnail()">
 
-  <div id="adminList" class="card-container"></div>
-</div>
+      <div id="thumbPreviewBox">
+        <p>Thumbnail Preview</p>
+        <img id="thumbPreview" alt="Preview">
+      </div>
+
+      <input id="drive" placeholder="Download / Drive Link">
+
+      <textarea id="prompt" placeholder="Gemini Prompt (only for Gemini)"></textarea>
+
+      <select id="category">
+        <option value="CapCut">CapCut</option>
+        <option value="VN">VN</option>
+        <option value="Gemini">Gemini</option>
+      </select>
+
+      <button onclick="uploadTrending()">Save</button>
+    </div>
+
+    <div class="admin-card">
+      <h3>Uploaded Items</h3>
+      <div id="adminList" class="card-container"></div>
+    </div>
+
+  </div>
+
+</main>
 
 <script src="js/main.js"></script>
 </body>
