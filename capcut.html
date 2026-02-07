@@ -1,22 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
   <title>CapCut</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
+<!-- TOP BAR -->
 <header class="topbar">
   <span class="site-name">JaidevEdit</span>
-  <div id="menuBtn">☰</div>
+  <button id="menuBtn">☰</button>
 </header>
 
-<div id="sidebar"></div>
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <a href="index.html">Home</a>
+  <a href="trending.html">Trending</a>
+  <a href="capcut.html" class="active">CapCut</a>
+  <a href="vn.html">VN</a>
+  <a href="gemini.html">Gemini</a>
+  <a href="admin.html">Admin</a>
+</nav>
 <div id="overlay"></div>
 
-<h2>CapCut</h2>
-<input id="searchInput" placeholder="Search CapCut..." onkeyup="searchFixed('CapCut')">
-<div id="fixedList" class="card-container"></div>
+<!-- MAIN CONTENT -->
+<main class="container">
+
+  <h2>🎬 CapCut Templates</h2>
+
+  <input
+    id="searchInput"
+    class="search-box"
+    placeholder="Search CapCut..."
+    onkeyup="searchFixed('CapCut')"
+  >
+
+  <div id="fixedList" class="card-container"></div>
+
+</main>
 
 <script src="js/main.js"></script>
 </body>
