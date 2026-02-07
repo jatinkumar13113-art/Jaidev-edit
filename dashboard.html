@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Admin Dashboard</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="assets/css/app.css">
+</head>
+
+<body>
+<header class="topbar">
+  <h2>Admin Dashboard</h2>
+  <button onclick="logout()">Logout</button>
+</header>
+
+<main class="admin">
+<form class="card" id="addForm">
+  <h3>Add Template</h3>
+
+  <input id="title" placeholder="Title" required>
+
+  <textarea id="text" placeholder="Prompt / Description" rows="3"></textarea>
+
+  <select id="category">
+    <option value="capcut">CapCut</option>
+    <option value="vn">VN</option>
+    <option value="gemini">Gemini</option>
+    <option value="alight">Alight</option>
+    <option value="telegram">Telegram</option>
+  </select>
+
+  <input id="link" placeholder="Template / App / Channel Link">
+
+  <!-- 🔥 NEW -->
+  <input id="video" placeholder="YouTube / Video Link (optional)">
+
+  <input id="thumb" placeholder="Thumbnail URL" required>
+
+  <img id="preview">
+
+  <button>Add Template</button>
+</form>
+
+<section id="adminList"></section>
+</main>
+
+<script src="data/store.js"></script>
+<script>
+if(!sessionStorage.getItem("admin")) location.href="admin.html";
+
+thumb.oninput = () => preview.src = thumb.value;
+
+addForm.onsubmit = e => {
+  e.preventDefault();
+
+  Store.add({
+    id: Date.now(),
+    title: title.value,
+    text: text.value,
+    category: category.value,
+    link: link.value,
+    video: video.value,   // ✅ NEW
+    thumb: thumb.value
+  });
+
+  addForm.reset();
+  preview.src="";
+  render();
+};
+
+function render(){
+  adminList.innerHTML="";
+  Store.all().forEach(t=>{
+    const d=document.createElement("div");
+    d.className="card";
+    d.innerHTML=`
+      <img src="${t.thumb}">
+      <h4>${t.title}</h4>
+      <p style="opacity:.7;font-size:13px">${t.text || ""}</p>
+      <small>${t.category}</small><br>
+      <button onclick="del(${t.id})">Delete</button>
+    `;
+    adminList.appendChild(d);
+  });
+}
+function del(id){Store.remove(id);render();}
+function logout(){sessionStorage.clear();location.href="admin.html";}
+render();
+</script>
+</body>
+</html>

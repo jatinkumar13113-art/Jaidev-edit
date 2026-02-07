@@ -1,69 +1,30 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Admin Panel</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>Admin Login</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="assets/css/app.css">
 </head>
-<body>
 
-<header class="topbar">
-  <span class="site-name">Admin Panel</span>
-</header>
+<body class="center">
+<form class="card" id="loginForm">
+  <h2>Admin Login</h2>
+  <input type="password" id="pass" placeholder="Password" required>
+  <button>Login</button>
+  <p id="err"></p>
+</form>
 
-<main class="container admin-container">
-
-  <!-- LOGIN BOX -->
-  <div id="loginBox" class="admin-card">
-    <h2>Admin Login</h2>
-    <input
-      type="password"
-      id="pass"
-      placeholder="Admin Password"
-      autocomplete="current-password"
-    >
-    <button onclick="login()">Login</button>
-  </div>
-
-  <!-- ADMIN PANEL -->
-  <div id="adminPanel" style="display:none">
-
-    <div class="admin-card">
-      <h2>Add New Content</h2>
-
-      <input id="title" placeholder="Title">
-
-      <input id="thumb" placeholder="Thumbnail URL"
-        oninput="autoConvertDriveURL();previewThumbnail()">
-
-      <div id="thumbPreviewBox">
-        <p>Thumbnail Preview</p>
-        <img id="thumbPreview">
-      </div>
-
-      <input id="drive" placeholder="Download / Drive Link">
-
-      <textarea id="prompt" placeholder="Gemini Prompt (only for Gemini)"></textarea>
-
-      <select id="category">
-        <option value="CapCut">CapCut</option>
-        <option value="VN">VN</option>
-        <option value="Gemini">Gemini</option>
-      </select>
-
-      <button onclick="uploadTrending()">Save</button>
-    </div>
-
-    <div class="admin-card">
-      <h2>Uploaded Items</h2>
-      <div id="adminList" class="card-container"></div>
-    </div>
-
-  </div>
-
-</main>
-
-<script src="js/main.js"></script>
+<script>
+document.getElementById("loginForm").onsubmit=e=>{
+e.preventDefault();
+if(pass.value==="admin123"){
+ sessionStorage.setItem("admin","1");
+ location.href="dashboard.html";
+}else{
+ err.textContent="Wrong password";
+}
+}
+</script>
 </body>
 </html>

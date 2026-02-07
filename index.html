@@ -1,37 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>JaidevEdit</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8">
+<title>Jaidev Edit</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="assets/css/app.css">
 </head>
-<body>
 
+<body>
 <header class="topbar">
-  <span class="site-name">JaidevEdit</span>
   <button id="menuBtn">☰</button>
+
+  <div class="logo-wrap">
+    <img src="assets/images/logo.png" alt="Jaidev Edit Logo" class="logo-img">
+  </div>
 </header>
 
-<nav id="sidebar">
-  <a href="index.html" class="active">Home</a>
-  <a href="capcut.html">CapCut</a>
-  <a href="gemini.html">Gemini</a>
-  <a href="admin.html">Admin</a>
+<nav id="sidebar" class="sidebar">
+  <button data-cat="all">All</button>
+  <button data-cat="capcut">CapCut</button>
+  <button data-cat="vn">VN</button>
+  <button data-cat="gemini">Gemini</button>
+  <button data-cat="alight">Alight</button>
 </nav>
+
 <div id="overlay"></div>
 
-<main class="container">
-  <h2>🔥 Trending</h2>
-  <div id="trendingList" class="card-container"></div>
+<main id="templateGrid"></main>
 
-  <h2>📂 Categories</h2>
-  <div class="category-links">
-    <a href="category.html?cat=CapCut" class="cat">CapCut</a>
-    <a href="category.html?cat=Gemini" class="cat">Gemini</a>
-  </div>
-</main>
+<footer class="site-footer">
+  <span id="adminSecret">.</span>
+</footer>
 
-<script src="js/main.js"></script>
+<script src="data/store.js"></script>
+<script src="assets/js/app.js"></script>
 </body>
 </html>
