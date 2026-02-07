@@ -1,1 +1,158 @@
+:root{
+--bg:#0f0f12;
+--card:#17171d;
+--accent:linear-gradient(135deg,#ff4ecd,#7a5cff);
+--text:#fff;
+--radius:14px;
+}
 
+*{box-sizing:border-box}
+
+body{
+margin:0;
+font-family:sans-serif;
+background:var(--bg);
+color:var(--text);
+}
+
+/* TOP BAR */
+.topbar{
+display:flex;
+align-items:center;
+gap:10px;
+padding:12px;
+background:#111;
+position:sticky;
+top:0;
+z-index:10;
+}
+
+button{
+border:none;
+padding:10px 14px;
+border-radius:var(--radius);
+background:var(--accent);
+color:#fff;
+cursor:pointer;
+}
+
+/* SIDEBAR */
+.sidebar{
+position:fixed;
+top:0;
+left:-260px;
+width:240px;
+height:100%;
+background:#14141a;
+padding:20px;
+transition:.3s;
+z-index:20;
+}
+.sidebar.active{left:0}
+.sidebar button{
+width:100%;
+margin-bottom:10px;
+background:#222;
+}
+
+#overlay{
+position:fixed;
+inset:0;
+background:#0008;
+display:none;
+}
+#overlay.show{display:block}
+
+/* GRID */
+main{
+padding:15px;
+display:grid;
+grid-template-columns:repeat(auto-fill,minmax(160px,1fr));
+gap:15px;
+}
+
+.template-card,.card{
+background:var(--card);
+padding:10px;
+border-radius:var(--radius);
+}
+.template-card img,.card img{
+width:100%;
+aspect-ratio:9/16;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* ADMIN */
+.center{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+}
+.admin{
+padding:15px;
+display:grid;
+gap:20px;
+}
+
+input,select{
+width:100%;
+padding:10px;
+border-radius:10px;
+border:none;
+margin-bottom:10px;
+}
+
+/* HIDDEN FOOTER */
+.site-footer{
+height:40px;
+opacity:0.02;
+}
+#adminSecret{
+display:block;
+width:100%;
+height:100%;
+}
+
+/* TELEGRAM */
+.tg-popup{
+position:fixed;
+bottom:20px;
+right:20px;
+background:var(--card);
+padding:15px;
+border-radius:14px;
+}
+textarea{
+  width:100%;
+  padding:10px;
+  border-radius:10px;
+  border:none;
+  resize:none;
+  margin-bottom:10px;
+  font-family:sans-serif;
+}
+
+.copy-btn{
+  background:linear-gradient(135deg,#4facfe,#00f2fe);
+  color:#000;
+}
+
+.open-btn{
+  background:linear-gradient(135deg,#ff4ecd,#7a5cff);
+}
+
+.logo-wrap{
+  display:flex;
+  align-items:center;
+}
+
+.logo-img{
+  height:100px;          /* mobile friendly */
+  width:auto;
+  object-fit:contain;
+}
+.video-btn{
+  background:linear-gradient(135deg,#ff0000,#ff5f5f);
+}
